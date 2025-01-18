@@ -21,7 +21,7 @@ const initialState = {
         name: "Dsgnr.",
         description: "2024.12 - Design agency website with API",
         url: "https://oz-minimalist.vercel.app/",
-        img: "src/assets/dsgnr.svg",
+        img: "src/assets/dsgnr.png",
     },
     {
         id: 4,
