@@ -14,7 +14,7 @@ const initialState = {
         name: "Personal Blog",
         description: "2024.11 - Personal Blog with API.",
         url: "https://oreoryza-blog-lumos.vercel.app/blog",
-        img: "/src/assets/personalBlog.svg",
+        img: "/src/assets/hatguy.png",
     },
     {
         id: 3,
