@@ -16,7 +16,8 @@ const encryptor = encryptTransform({
 const persistConfig = {
     key: 'root',
     storage,
-    transforms: [encryptor]
+    transforms: [encryptor],
+    blacklist: ["projects"]
   };
 
 const persistedDoor = persistReducer(persistConfig, doorReducer);
