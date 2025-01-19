@@ -11,11 +11,11 @@ const Info = () => {
         theme === "dark" ? "" : "text-white"
       } grid md:grid-cols-2 grid-cols-1 duration-300 delay-500`}
     >
-      <div className="group w-52 h-52 bg-yellow opacity-75 hover:opacity-100 duration-300">
+      <div className="group w-52 h-52 bg-yellow opacity-75 md:hover:opacity-100 duration-300">
         <img
           src={hat}
           draggable={false}
-          className="grayscale group-hover:grayscale-0 duration-300"
+          className="grayscale md:group-hover:grayscale-0 duration-300"
         />
       </div>
       <div className="flex flex-col p-4 opacity-75">
