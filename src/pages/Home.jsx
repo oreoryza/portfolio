@@ -74,7 +74,7 @@ const Home = () => {
                 </Routes>
               </motion.div>
             </div>
-            <div draggable={false} className={`${theme === "dark" ? "" : "text-white"} absolute top-5 left-5 text-xl font-gabarito font-semibold tracking-wider duration-300 delay-500 select-none`}>
+            <div draggable={false} className={`${theme === "dark" ? "" : "text-white"} absolute top-5 left-[5%] text-xl font-gabarito font-semibold tracking-wider duration-300 delay-500 select-none`}>
               ORYZA
               <br/>
               SATIVA
@@ -82,7 +82,7 @@ const Home = () => {
             <div
               className={`${
                 theme === "dark" ? "" : "text-white"
-              } absolute flex items-center gap-6 bottom-5 left-5`}
+              } absolute flex items-center gap-6 bottom-5 left-[5%]`}
             >
               <div
                 onClick={() => dispatch(doorToggle())}

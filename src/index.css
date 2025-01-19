@@ -30,10 +30,6 @@ body {
     transform: perspective( 600px ) rotateY( 30deg );
 }
 
-h1 {
-  -webkit-text-stroke: 0.2rem #FEE032;
-}
-
 /* .swiper-slide-active {
   transform: scale(1.1) !important;
   filter: grayscale(0);

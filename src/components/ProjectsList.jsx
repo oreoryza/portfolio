@@ -9,7 +9,7 @@ const ProjectsList = () => {
   return (
     <>
     <div className="gap-4 w-[35vw] min-w-64 pr-4 border-r-4 border-yellow/[.75]">
-      <div className="w-full h-screen overflow-y-scroll bg-white flex flex-col gap-4 px-4 shadow-lg">
+      <div className="w-full h-screen overflow-y-scroll bg-white flex flex-col gap-4 p-4 shadow-lg">
         {projects.map((project) => (
         <a href={project.url} target="_blank" rel="noopener noreferrer" key={project.id} draggable={false} onMouseEnter={() => dispatch(setProjectPreview(project.description))} onMouseOut={() => dispatch(setProjectPreview(""))} className="brightness-90 grayscale hover:brightness-100 hover:grayscale-0 duration-300">
           <img draggable={false} src={project.img} />
