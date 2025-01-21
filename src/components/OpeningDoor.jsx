@@ -20,13 +20,13 @@ const OpeningDoor = () => {
             exit={{ opacity: 0, scale: 10 }}
             transition={{delay: 0.5, duration: 0.3}}
             onClick={() => dispatch(doorToggle())}
-            className={`${theme === "dark" ? "bg-white" : "bg-black"} absolute group w-40 h-64 border-8 border-yellow overflow-hidden`}
+            className="absolute group w-40 h-64 bg-transparent border-8 border-yellow overflow-hidden"
           >
             <motion.div exit={{x: -20}} className="absolute w-4 h-full bg-yellow">
               <div className="w-full h-full bg-black/[.05]"></div>
             </motion.div>
             <motion.div
-            exit={{opacity: 0}}
+            exit={{opacity: 0, x:-10}}
               onMouseOver={() => setIsDoorHover(true)}
               onMouseOut={() => setIsDoorHover(false)}
               className="absolute flex justify-end items-center door active border border-black/[.05] cursor-pointer"

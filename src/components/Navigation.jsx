@@ -13,7 +13,7 @@ const Navigation = () => {
     <motion.div
       className={`font-gabarito ${
         theme === "dark" ? "" : "text-white"
-      } flex flex-col gap-0.5 text-lg select-none duration-300 delay-500`}
+      } flex flex-col gap-0.5 text-xl select-none duration-300 delay-500`}
     >
       <Link
         to="/"

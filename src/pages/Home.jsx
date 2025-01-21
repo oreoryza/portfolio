@@ -48,24 +48,19 @@ const Home = () => {
             transition={{ delay: 0.8, type: "spring", stiffness: 75, damping: 10,  duration: 0.5 }}
             className="absolute top-0 bottom-0 flex justify-center items-center w-full overflow-hidden"
           >
-            <div className="flex justify-between items-center gap-2 h-[28rem] w-[90%]">
-              <div className="flex flex-col justify-between items-start h-full min-w-[20vw]">
+              <div className="fixed left-[5vw] top-32 z-50">
                 <Navigation />
-                <motion.div
-                  key={location.pathname}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5, duration: 1.5 }}
-                >
-                  <Description />
-                </motion.div>
               </div>
               <motion.div
                 key={location.pathname}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 1.5 }}
+                className="w-screen flex justify-between items-center px-[5vw]"
               >
+                <div className="flex items-end h-96">
+                  <Description/>
+                </div>
                 <Routes location={location} key={location.pathname}>
                   <Route path="/" element={<BannerName />} />
                   <Route path="/projects" element={<ProjectsList />} />
@@ -73,7 +68,6 @@ const Home = () => {
                   <Route path="/info" element={<Info />} />
                 </Routes>
               </motion.div>
-            </div>
             <div draggable={false} className={`${theme === "dark" ? "" : "text-white"} absolute top-5 left-[5%] text-xl font-gabarito font-semibold tracking-wider duration-300 delay-500 select-none`}>
               ORYZA
               <br/>
