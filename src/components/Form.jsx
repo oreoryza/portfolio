@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import DOMPurify from "dompurify";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const Form = () => {
   const theme = useSelector((state) => state.theme.theme);
+  const [isSubmitting, setIsSubmitting] = useState(false); // State untuk mengontrol status tombol
 
   const sanitizeInput = (input) => {
     return DOMPurify.sanitize(input);
@@ -12,11 +13,14 @@ const Form = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsSubmitting(true); // Set status tombol menjadi disabled
+
     const formData = new FormData(event.target);
 
-    // web3forms
+    // Validasi input
     if (formData.get('email') === '' || formData.get('name') === '' || formData.get('message') === '') {
       Notify.failure('Please fill in all fields.');
+      setIsSubmitting(false); // Reset status tombol jika validasi gagal
       return;
     }
 
@@ -25,20 +29,27 @@ const Form = () => {
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    }).then((res) => res.json());
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      }).then((res) => res.json());
 
-    if (res.success) {
-      Notify.success('Thank you for your message, i will respond as soon as possible.');
-      event.target.reset();
+      if (res.success) {
+        Notify.success('Thank you for your message, I will respond as soon as possible.');
+        event.target.reset();
+      }
+    } catch (error) {
+      Notify.failure('An error occurred while submitting the form.');
+    } finally {
+      setIsSubmitting(false); // Reset status tombol setelah proses selesai
     }
   };
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -88,8 +99,14 @@ const Form = () => {
         />
       </div>
       <div className="flex justify-end">
-        <button className="font-gabarito text-xl font-medium text-blue mx-4 hover:opacity-50 duration-300">
-          send <i className="bi bi-arrow-right"></i>
+        <button
+          type="submit"
+          disabled={isSubmitting} // Nonaktifkan tombol jika isSubmitting true
+          className={`font-gabarito text-xl font-medium text-blue mx-4 hover:opacity-50 duration-300 ${
+            isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+          }`}
+        >
+          {isSubmitting ? "Sending..." : "Send"} {isSubmitting ? (<i class="bi bi-hourglass-split"></i>) : (<i className="bi bi-arrow-right"></i>)}
         </button>
       </div>
     </form>
