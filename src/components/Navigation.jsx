@@ -13,7 +13,7 @@ const Navigation = () => {
     <motion.div
       className={`font-gabarito ${
         theme === "dark" ? "" : "text-white"
-      } flex flex-col gap-0.5 text-xl select-none duration-300 delay-500`}
+      } flex flex-col gap-0.5 text-xl select-none duration-300 `}
     >
       <Link
         to="/"
@@ -22,7 +22,7 @@ const Navigation = () => {
         className={
           location.pathname === "/"
             ? "text-blue line-through"
-            : "hover:text-blue duration-300 max-w-fit"
+            : "hover:text-blue max-w-fit"
         }
       >
         home
@@ -33,7 +33,7 @@ const Navigation = () => {
         className={
           location.pathname === "/projects"
             ? "text-blue line-through"
-            : "hover:text-blue duration-300 max-w-fit"
+            : "hover:text-blue max-w-fit"
         }
       >
         projects
@@ -45,7 +45,7 @@ const Navigation = () => {
         className={
           location.pathname === "/info"
             ? "text-blue line-through"
-            : "hover:text-blue duration-300 max-w-fit"
+            : "hover:text-blue max-w-fit"
         }
       >
         info
@@ -57,7 +57,7 @@ const Navigation = () => {
         className={
           location.pathname === "/contact"
             ? "text-blue line-through"
-            : "hover:text-blue duration-300 max-w-fit"
+            : "hover:text-blue max-w-fit"
         }
       >
         contact

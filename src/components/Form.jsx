@@ -55,7 +55,7 @@ const Form = () => {
       onSubmit={handleSubmit}
       className={`flex flex-col gap-4 w-[60vw] opacity-75 mt-4 ${
         theme == "dark" ? "" : "text-white"
-      } duration-300 delay-500`}
+      } duration-300 `}
     >
       <div className="font-gabarito flex flex-col gap-2">
         <label htmlFor="email" className="text-lg">
