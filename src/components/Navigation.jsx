@@ -22,7 +22,7 @@ const Navigation = () => {
         className={
           location.pathname === "/"
             ? "text-blue line-through"
-            : "hover:text-blue duration-300 max-w-fit"
+            : "hover:text-blue max-w-fit"
         }
       >
         home
@@ -33,7 +33,7 @@ const Navigation = () => {
         className={
           location.pathname === "/projects"
             ? "text-blue line-through"
-            : "hover:text-blue duration-300 max-w-fit"
+            : "hover:text-blue max-w-fit"
         }
       >
         projects
@@ -45,7 +45,7 @@ const Navigation = () => {
         className={
           location.pathname === "/info"
             ? "text-blue line-through"
-            : "hover:text-blue duration-300 max-w-fit"
+            : "hover:text-blue max-w-fit"
         }
       >
         info
@@ -57,7 +57,7 @@ const Navigation = () => {
         className={
           location.pathname === "/contact"
             ? "text-blue line-through"
-            : "hover:text-blue duration-300 max-w-fit"
+            : "hover:text-blue max-w-fit"
         }
       >
         contact
