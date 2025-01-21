@@ -25,7 +25,7 @@ const Description = () => {
       <p
         className={`${
           theme === "dark" ? "" : "text-white"
-        } md:max-w-md font-small text-xs md:text-sm leading-5 duration-300 delay-500`}
+        } md:max-w-md font-small text-xs md:text-sm leading-5 duration-300`}
       >
         {desc}
       </p>
