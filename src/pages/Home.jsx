@@ -68,7 +68,7 @@ const Home = () => {
                   <Route path="/info" element={<Info />} />
                 </Routes>
               </motion.div>
-            <div draggable={false} className={`${theme === "dark" ? "" : "text-white"} absolute top-5 left-[5%] text-xl font-gabarito font-semibold tracking-wider duration-300 delay-500 select-none`}>
+            <div draggable={false} className={`${theme === "dark" ? "" : "text-white"} absolute top-5 left-[5%] text-xl font-gabarito font-semibold tracking-wider duration-300  select-none`}>
               ORYZA
               <br/>
               SATIVA
@@ -86,7 +86,7 @@ const Home = () => {
                 onClick={() => dispatch(toggleTheme())}
                 className={`${
                   theme === "dark" ? "" : "text-white"
-                } duration-300 delay-500`}
+                } duration-300 `}
               >
                 {theme === "dark" ? (
                   <i className="bi bi-sun-fill"></i>
@@ -94,7 +94,7 @@ const Home = () => {
                   <i className="bi bi-moon-fill"></i>
                 )}
               </button>
-              <p className="text-sm duration-300 delay-500 max-md:hidden"><i className="bi bi-c-circle"></i> ORYZA SATIVA</p>
+              <p className="text-sm duration-300  max-md:hidden"><i className="bi bi-c-circle"></i> ORYZA SATIVA</p>
             </div>
             {/* <ProjectDetail /> */}
           </motion.div>

@@ -9,7 +9,7 @@ const Info = () => {
     <div
       className={`font-gabarito ${
         theme === "dark" ? "" : "text-white"
-      } grid md:grid-cols-2 grid-cols-1 duration-300 delay-500`}
+      } grid md:grid-cols-2 grid-cols-1 duration-300 `}
     >
       <div className="group w-52 h-52 bg-yellow opacity-75 md:hover:opacity-100 duration-300">
         <img
