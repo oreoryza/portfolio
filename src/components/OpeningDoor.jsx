@@ -8,10 +8,9 @@ const OpeningDoor = () => {
   const dispatch = useDispatch();
   const [isDoorHover, setIsDoorHover] = useState(false);
   const door = useSelector((state) => state.door.door);
-  const theme = useSelector((state) => state.theme.theme)
 
   return (
-    <div className="relative flex justify-center items-center w-full h-screen">
+    <div className="relative flex justify-center items-center w-full h-screen bg-door">
       <AnimatePresence initial={false}>
         {door && (
           <motion.div

@@ -9,16 +9,17 @@ const Info = () => {
     <div
       className={`font-gabarito ${
         theme === "dark" ? "" : "text-white"
-      } grid md:grid-cols-2 grid-cols-1 duration-300 `}
+      } grid md:grid-cols-2 grid-cols-1 duration-300`}
     >
-      <div className="group w-52 h-52 bg-yellow opacity-75 md:hover:opacity-100 duration-300">
+      <div className="group w-52 h-52 bg-yellow duration-300">
         <img
           src={hat}
           draggable={false}
           className="grayscale md:group-hover:grayscale-0 duration-300"
         />
       </div>
-      <div className="flex flex-col p-4 opacity-75">
+      <div className="flex flex-col p-4">
+        <div className="flex md:flex-col max-md:gap-2">
         <a
           draggable={false}
           href="https://www.linkedin.com/in/oryza-sativa-fedvp/"
@@ -37,19 +38,20 @@ const Info = () => {
         >
           instagram<i className="bi bi-arrow-right-short"></i>
         </a>
+        </div>
         <a
           draggable={false}
           href="https://drive.google.com/file/d/16UDl6EZl5vX1_UeDO_HRgNozdQKqTTbx/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 underline flex hover:gap-1"
+          className="mt-4 underline flex hover:gap-1"
         >
           resume<i className="bi bi-arrow-right-short"></i>
         </a>
       </div>
-      <div className="flex flex-col p-4 opacity-75">
+      <div className="flex flex-col p-4">
         <p className="font-semibold">my tech stack :</p>
-        <div className="grid grid-cols-2 mt-4">
+        <div className="grid grid-cols-2 mt-2">
           <a
             draggable={false}
             href="https://react.dev/"
@@ -142,7 +144,7 @@ const Info = () => {
           </a>
         </div>
       </div>
-      <div className="max-md:hidden w-52 h-52 bg-blue opacity-75 flex justify-center items-center">
+      <div className="max-md:hidden w-52 h-52 bg-blue flex justify-center items-center">
         <img draggable={false} src={arc} alt="" className="w-[75%] arc" />
         <div className="group absolute bg-white size-16 rounded-full flex justify-center items-center cursor-pointer">
           <i class="bi bi-play-fill scale-[2.5] translate-x-0.5 text-blue group-hover:opacity-0 duration-300"></i>

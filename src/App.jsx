@@ -18,3 +18,11 @@ const App = () => {
 }
 
 export default App
+
+// colors: {
+//   yellow: "#FEE032",
+//   blue: "#3060B7"
+// },
+// fontFamily: {
+//   gabarito: ["Gabarito", "sans-serif"]
+// }

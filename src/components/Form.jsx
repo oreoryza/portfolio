@@ -53,13 +53,13 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className={`flex flex-col gap-4 w-[60vw] opacity-75 mt-4 ${
+      className={`flex flex-col gap-4 w-[70vw] mt-4 ${
         theme == "dark" ? "" : "text-white"
       } duration-300 `}
     >
       <div className="font-gabarito flex flex-col gap-2">
         <label htmlFor="email" className="text-lg">
-          |email:
+          Email:
         </label>
         <input
           type="email"
@@ -68,12 +68,12 @@ const Form = () => {
           }}
           name="email"
           id="email"
-          className="bg-transparent border-b-2 border-yellow focus:border-blue duration-300 p-2 outline-0"
+          className="bg-transparent border-2 border-yellow focus:border-blue duration-300 p-2 outline-0"
         />
       </div>
       <div className="font-gabarito flex flex-col gap-2">
         <label htmlFor="name" className="text-lg">
-          |name:
+          Name:
         </label>
         <input
           type="text"
@@ -82,12 +82,12 @@ const Form = () => {
           }}
           name="name"
           id="name"
-          className="bg-transparent border-b-2 border-yellow focus:border-blue duration-300 p-2 outline-0"
+          className="bg-transparent border-2 border-yellow focus:border-blue duration-300 p-2 outline-0"
         />
       </div>
       <div className="font-gabarito flex flex-col gap-2">
         <label htmlFor="message" className="text-lg">
-          |message:
+          Message:
         </label>
         <textarea
           onChange={(e) => {
@@ -102,7 +102,7 @@ const Form = () => {
         <button
           type="submit"
           disabled={isSubmitting} // Nonaktifkan tombol jika isSubmitting true
-          className={`font-gabarito text-xl font-medium text-blue mx-4 hover:opacity-50 duration-300 ${
+          className={`font-gabarito text-lg font-medium text-white bg-blue px-3 py-2 hover:brightness-90 duration-300 ${
             isSubmitting ? "opacity-50 cursor-not-allowed" : ""
           }`}
         >

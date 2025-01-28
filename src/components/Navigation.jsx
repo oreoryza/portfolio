@@ -1,66 +1,71 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { setProjectPreview } from "../redux/slices/projectSlice";
+import { useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
 
-const Navigation = () => {
+const Navigation = ({ handleLinkClick }) => {
   const location = useLocation();
-  const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme.theme);
   return (
     <motion.div
       className={`font-gabarito ${
         theme === "dark" ? "" : "text-white"
-      } flex flex-col gap-0.5 text-xl select-none duration-300 `}
+      } flex flex-col gap-1 md:text-4xl text-2xl select-none`}
     >
       <Link
         to="/"
         draggable={false}
-        onClick={() => dispatch(setProjectPreview(""))}
-        className={
+        onClick={() => {
+          handleLinkClick();
+        }}
+        className={`${
           location.pathname === "/"
             ? "text-blue line-through"
-            : "hover:text-blue max-w-fit"
-        }
+            : "hover:text-blue"
+        } duration-300`}
       >
-        home
+        Home
       </Link>
       <Link
         to="/projects"
         draggable={false}
-        className={
+        onClick={() => handleLinkClick()}
+        className={`${
           location.pathname === "/projects"
             ? "text-blue line-through"
-            : "hover:text-blue max-w-fit"
-        }
+            : "hover:text-blue"
+        } duration-300`}
       >
-        projects
+        Projects
       </Link>
       <Link
         to="/info"
         draggable={false}
-        onClick={() => dispatch(setProjectPreview(""))}
-        className={
+        onClick={() => {
+          handleLinkClick();
+        }}
+        className={`${
           location.pathname === "/info"
             ? "text-blue line-through"
-            : "hover:text-blue max-w-fit"
-        }
+            : "hover:text-blue"
+        } duration-300`}
       >
-        info
+        Info
       </Link>
       <Link
         to="/contact"
         draggable={false}
-        onClick={() => dispatch(setProjectPreview(""))}
-        className={
+        onClick={() => {
+          handleLinkClick();
+        }}
+        className={`${
           location.pathname === "/contact"
             ? "text-blue line-through"
-            : "hover:text-blue max-w-fit"
-        }
+            : "hover:text-blue"
+        } duration-300`}
       >
-        contact
+        Contact
       </Link>
     </motion.div>
   );
